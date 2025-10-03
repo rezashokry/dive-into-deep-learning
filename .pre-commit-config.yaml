@@ -1,0 +1,13 @@
+default_stages: [commit]
+fail_fast: true
+
+repos:
+-   repo: local
+    hooks:
+    - id: jupytext-rmd
+      name: jupytext-convert-to-rmd
+      entry: jupytext --from ipynb --to Rmd --pre-commit
+      pass_filenames: false
+      language: python
+      require_serial: true
+      verbose: true
